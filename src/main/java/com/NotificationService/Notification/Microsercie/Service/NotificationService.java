@@ -13,7 +13,16 @@ public class NotificationService {
 
     public int signInMail(String email,String message)
     {
+        SimpleMailMessage simpleMail=new SimpleMailMessage();
 
+        simpleMail.setFrom("raj");
+        simpleMail.setTo(email);
+        simpleMail.setSubject("Successfully Signed In");
+        simpleMail.setText("congratulation for your ar upgradation");
+
+        javaMailSender.send(simpleMail);
+
+        return 1;
     }
 
 }
