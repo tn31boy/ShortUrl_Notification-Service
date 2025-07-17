@@ -11,10 +11,11 @@ public class NotificationService {
     @Autowired
     JavaMailSender javaMailSender;
 
-    public int signInMail(String email,String message)
+    public void signInMail(String email,String message)
     {
         SimpleMailMessage simpleMail=new SimpleMailMessage();
 
+        System.out.println("is");
         simpleMail.setFrom("raj");
         simpleMail.setTo(email);
         simpleMail.setSubject("Successfully Signed In");
@@ -22,7 +23,7 @@ public class NotificationService {
 
         javaMailSender.send(simpleMail);
 
-        return 1;
+        //return 1;
     }
 
 }
